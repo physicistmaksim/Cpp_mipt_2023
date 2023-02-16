@@ -19,7 +19,7 @@ void func(int N)
         }
         pr = mn;
     }
-    if (max > min)
+    if (max >= min)
     {
         cout << "MAX" << endl;
     }
@@ -27,16 +27,11 @@ void func(int N)
     {
         cout << "MIN" << endl;
     }
-    else
-    {
-        cout << "MAX = MIN" << endl;
-    }
 }
 
 int main() 
 {
     int N;
-    cout << "N = ";
     cin >> N;
     func(N);
     return 0;

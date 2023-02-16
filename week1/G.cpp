@@ -45,7 +45,6 @@ void func(int N)
 int main() 
 {
     int N;
-    cout << "N = ";
     cin >> N;
     func(N);
     return 0;

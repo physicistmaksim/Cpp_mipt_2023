@@ -10,6 +10,7 @@ int recursive_power(int base, int power)
         res = res * base;
         power--;
     }
+    return res;
 }
 
 int main() 
