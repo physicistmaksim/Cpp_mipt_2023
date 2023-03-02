@@ -29,7 +29,7 @@ int hibbard_coef(int (&b)[N], int k)
     i--;
     for (int j = 0; j < i + 1; j++)
     {
-        b[j] = pow(2, (float)i) - 1;
+        b[j] = pow(2, (float)j) - 1;
     }
     return i;
 }
@@ -49,15 +49,15 @@ int main()
 {
     int a[N];
     int coef[N];
+    std::default_random_engine rng(1001);
     for (int k = 100; k < N; k = k + 100)
     {
         swap_counter = 0;
         double av = 0;
         int ind_h = hibbard_coef(coef, k);
-        std::default_random_engine rng(1001);
+        std::uniform_int_distribution<int> dstr(0, k);
         for (int i = 0; i < 100; i++)
         {
-            std::uniform_int_distribution<int> dstr(0, k);
             for (int j = 0; j < k; j++)
             {
                 a[j] = dstr(rng);
