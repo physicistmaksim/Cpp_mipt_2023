@@ -3,17 +3,29 @@
 #define N 10 // actual size of the array
 #endif
 
-void insert_sort_gap(int (&a)[N], int const begin, int const end, int gap)
+void swap(int &a, int &b)
 {
-    for (int i = gap; i < end; i++)
+    int tmp = a;
+    a = b;
+    b = tmp;
+}
+
+void func(int (&a)[N], int k)
+{
+    int m = 0;
+    for (int i = 0; i < k - 1; i++)
     {
-        int temp = a[i];
-        int k = i;
-        for (; (k >= gap) && (a[k - gap] > temp); k -= gap)
+        for (int j = i; j < k; j++)
         {
-            a[k] = a[k - gap];
+            if (a[j] < a[m])
+            {
+                m = j;
+            }
         }
-        a[k] = temp;
+        if (m != i)
+        {
+            swap(a[m], a[i]);
+        }
     }
 }
 
@@ -38,7 +50,7 @@ int main()
 {
     int a[N];
     readArray(a);
-    insert_sort_gap(a, 0, N, 1);
+    func(a, N);
     printArray(a);
     return 0;
 }

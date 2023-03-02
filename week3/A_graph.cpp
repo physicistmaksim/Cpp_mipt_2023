@@ -1,19 +1,31 @@
 #include <iostream>
 #include <chrono>
 #include <random>
-const int N = 10000;
+const int N = 1000;
 
-void insert_sort_gap(int (&a)[N], int const begin, int const end, int gap)
+void swap(int &a, int &b)
 {
-    for (int i = gap; i < end; i++)
+    int tmp = a;
+    a = b;
+    b = tmp;
+}
+
+void func(int (&a)[N], int k)
+{
+    int m = 0;
+    for (int i = 0; i < k - 1; i++)
     {
-        int temp = a[i];
-        int k = i;
-        for (; (k >= gap) && (a[k - gap] > temp); k -= gap)
+        for (int j = i; j < k; j++)
         {
-            a[k] = a[k - gap];
+            if (a[j] < a[m])
+            {
+                m = j;
+            }
         }
-        a[k] = temp;
+        if (m != i)
+        {
+            swap(a[m], a[i]);
+        }
     }
 }
 
@@ -38,7 +50,7 @@ int main()
 {
     int a[N];
 
-    for (int k = 100; k < N; k = k + 100)
+    for (int k = 10; k < N; k = k + 10)
     {
         double av = 0;
         for (int i = 0; i < 100; i++)
@@ -52,7 +64,7 @@ int main()
             auto begin = std::chrono::steady_clock::now();
             for (unsigned cnt = 100; cnt != 0; --cnt)
             {
-                insert_sort_gap(a, 0, k, 1);
+                func(a, k);
             }
             auto end = std::chrono::steady_clock::now();
             auto time_span = std::chrono::duration_cast<std::chrono::milliseconds>(end - begin);
