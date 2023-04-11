@@ -93,7 +93,7 @@ Node* reverse(Node* head)
 }
 
 
-int main() 
+int main()
 {
     Node* head = nullptr;
     head = read_list(head);
