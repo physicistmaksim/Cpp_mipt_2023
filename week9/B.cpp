@@ -10,26 +10,6 @@ struct Node
     Node* next;
 };
 
-void print_list(Node* head_ptr)
-{
-    if(head_ptr == nullptr)
-    {
-        std::cout << std::endl;
-    }
-    else
-    {
-        Node *ptr = head_ptr;
-        std::cout << ptr->key;
-        ptr = ptr->next;
-        while (ptr != nullptr)
-        {
-            std::cout << " " << ptr->key;
-            ptr = ptr->next;
-        }
-        std::cout << std::endl;
-    }
-}
-
 void destroy_list(Node *&head_ptr)
 {
     Node *ptr = head_ptr;
@@ -72,31 +52,25 @@ Node* read_list(Node* head)
         push_back(head, a);
         cin >> a;
     }
-    push_back(head, a);
     return head;
 }
 
-Node* reverse(Node* head)
-{
-    Node* a = nullptr;
-    Node* b = head;
-    Node* c = new Node;
-    while (b != nullptr)
+int find_middle(Node* head){
+    Node* slow = head;
+    Node* fast = head;        
+    while(fast!=nullptr && fast->next!=nullptr)
     {
-        c = b->next;
-        b->next = a;
-        a = b;
-        b = c;
-    }
-    return a;
+        fast = fast->next->next;                      
+        slow = slow->next;
+    }       
+    return slow->key; 
 }
 
 int main()
 {
     Node* head = nullptr;
     head = read_list(head);
-    head = reverse(head);
-    print_list(head);
+    cout << find_middle(head) << endl;
     destroy_list(head);
     return 0;
 }
