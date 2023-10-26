@@ -1,0 +1,7 @@
+---
+triple:          'x86_64-apple-darwin'
+binary-path:     '/Users/maksimmurasko/Documents/Cpp_mipt_2023/3_semester/5sem/test'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100003F90, symSize: 0xF }
+  - { offsetInCU: 0x2D1B, offset: 0x2D1B, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100003F90, symSize: 0xF }
+...

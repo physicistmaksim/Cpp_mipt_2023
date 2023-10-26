@@ -1,0 +1,12 @@
+---
+triple:          'x86_64-apple-darwin'
+binary-path:     '/Users/maksimmurasko/Documents/Cpp_mipt_2023/3_semester/6sem/test2'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: __Z5applyILj0EEdPFddEd, symObjAddr: 0x0, symBinAddr: 0x100003D50, symSize: 0x20 }
+  - { offsetInCU: 0x2D1B, offset: 0x2D1B, size: 0x8, addend: 0x0, symName: __Z5applyILj0EEdPFddEd, symObjAddr: 0x0, symBinAddr: 0x100003D50, symSize: 0x20 }
+  - { offsetInCU: 0x2D5F, offset: 0x2D5F, size: 0x8, addend: 0x0, symName: __Z3sqrd, symObjAddr: 0x20, symBinAddr: 0x100003D70, symSize: 0x20 }
+  - { offsetInCU: 0x2D8B, offset: 0x2D8B, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x40, symBinAddr: 0x100003D90, symSize: 0xE0 }
+  - { offsetInCU: 0x2DA4, offset: 0x2DA4, size: 0x8, addend: 0x0, symName: __Z5applyILj3EEdPFddEd, symObjAddr: 0x120, symBinAddr: 0x100003E70, symSize: 0x40 }
+  - { offsetInCU: 0x2DE8, offset: 0x2DE8, size: 0x8, addend: 0x0, symName: __Z5applyILj2EEdPFddEd, symObjAddr: 0x160, symBinAddr: 0x100003EB0, symSize: 0x40 }
+  - { offsetInCU: 0x2E2C, offset: 0x2E2C, size: 0x8, addend: 0x0, symName: __Z5applyILj1EEdPFddEd, symObjAddr: 0x1A0, symBinAddr: 0x100003EF0, symSize: 0x33 }
+...
